@@ -17,15 +17,14 @@ import mock
 import simplejson
 import yaml
 
-import elastalert.config
-from elastalert.config import load_modules
-from elastalert.config import load_options
-from elastalert.config import load_rule_yaml
-from elastalert.elastalert import ElastAlerter
-from elastalert.util import elasticsearch_client
-from elastalert.util import lookup_es_key
-from elastalert.util import ts_now
-from elastalert.util import ts_to_dt
+from config import load_modules
+from config import load_options
+from config import load_rule_yaml
+from elastalert import ElastAlerter
+from util import elasticsearch_client
+from util import lookup_es_key
+from util import ts_now
+from util import ts_to_dt
 
 logging.getLogger().setLevel(logging.INFO)
 logging.getLogger('elasticsearch').setLevel(logging.WARNING)
