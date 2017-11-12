@@ -16,6 +16,7 @@ import argparse
 import mock
 import simplejson
 import yaml
+import config
 
 from config import load_modules
 from config import load_options
@@ -244,8 +245,8 @@ class MockElastAlerter(object):
             conf['run_every'] = endtime - starttime
 
         # Instantiate ElastAlert to use mock config and special rule
-        with mock.patch('elastalert.elastalert.get_rule_hashes'):
-            with mock.patch('elastalert.elastalert.load_rules') as load_conf:
+        with mock.patch('elastalert.get_rule_hashes'):
+            with mock.patch('elastalert.load_rules') as load_conf:
                 load_conf.return_value = conf
                 if args.alert:
                     client = ElastAlerter(['--verbose'])
