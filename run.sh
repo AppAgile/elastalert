@@ -1,2 +1,2 @@
 #!/bin/bash
-python elastalert/elastalert.py --debug --config /elastalert
+python elastalert/elastalert.py --debug --config /elastalert/config.yaml
