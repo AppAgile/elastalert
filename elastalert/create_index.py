@@ -139,14 +139,18 @@ def main():
     if not index:
         index = 'elastalert_status'
 
-    old_index = (args.old_index if args.old_index is not None
-                 else raw_input('Name of existing index to copy? (Default None) '))
+    # TODO
+    old_index = None
+    #old_index = (args.old_index if args.old_index is not None
+    #             else raw_input('Name of existing index to copy? (Default None) '))
 
+    # TODO
     es_index = IndicesClient(es)
     #if es_index.exists(index):
     #    print('Index ' + index + ' already exists. Skipping index creation.')
     #    return None
 
+    # TODO
     #es.indices.create(index)
     # To avoid a race condition. TODO: replace this with a real check
     time.sleep(2)
