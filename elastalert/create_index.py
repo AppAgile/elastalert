@@ -143,11 +143,11 @@ def main():
                  else raw_input('Name of existing index to copy? (Default None) '))
 
     es_index = IndicesClient(es)
-    if es_index.exists(index):
-        print('Index ' + index + ' already exists. Skipping index creation.')
-        return None
+    #if es_index.exists(index):
+    #    print('Index ' + index + ' already exists. Skipping index creation.')
+    #    return None
 
-    es.indices.create(index)
+    #es.indices.create(index)
     # To avoid a race condition. TODO: replace this with a real check
     time.sleep(2)
     es.indices.put_mapping(index=index, doc_type='elastalert', body=es_mapping)
